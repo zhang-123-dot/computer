@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机学习资源导航 | 学CS必备网站大全</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        :root {
+            --primary: #ff2442;
+            --primary-light: #ff5c75;
+            --light-bg: #fff9f9;
+            --card-bg: #ffffff;
+            --text: #333;
+            --text-light: #666;
+            --text-lighter: #999;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff9f9 0%, #f5f9ff 100%);
+            color: var(--text);
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin: 30px 0 40px;
+            position: relative;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b81 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(255, 36, 66, 0.3);
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            color: var(--text);
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-weight: 400;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stat-item i {
+            color: var(--primary);
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 25px auto;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+            padding-left: 60px;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .search-bar input:focus {
+            box-shadow: 0 6px 25px rgba(255, 36, 66, 0.15);
+            outline: none;
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        /* 分类导航 */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0 40px;
+            padding: 0 20px;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 30px;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* 卡片网格布局 */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        
+        .resource-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid #f8f8f8;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 25px 25px 15px;
+            border-bottom: 1px solid #f5f5f5;
+            position: relative;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 36, 66, 0.1) 0%, rgba(255, 107, 129, 0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .card-category {
+            display: inline-block;
+            background: rgba(255, 36, 66, 0.1);
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .card-body {
+            padding: 20px 25px;
+        }
+        
+        .card-description {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .visit-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 36, 66, 0.3);
+        }
+        
+        .visit-btn:hover {
+            background: #e01a35;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 36, 66, 0.4);
+        }
+        
+        .visit-btn i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .card-footer {
+            padding: 15px 25px;
+            border-top: 1px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-lighter);
+            font-size: 0.85rem;
+        }
+        
+        .rating {
+            color: #ffb400;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px 0 30px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+            }
+            
+            .categories {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                margin: 20px 0 30px;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                    <h1>计算机学习资源导航</h1>
+                    <p class="subtitle">精选30个学计算机必备网站，涵盖编程学习、算法训练、开源项目、技术社区等核心领域</p>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-globe-asia"></i>
+                    <span>全球优质资源</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>9大分类导航</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span>精选推荐</span>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="搜索资源名称、描述或分类...">
+            </div>
+        </header>
+        
+        <div class="categories">
+            <button class="category-btn active"><i class="fas fa-layer-group"></i> 全部资源</button>
+            <button class="category-btn"><i class="fas fa-code"></i> 编程学习</button>
+            <button class="category-btn"><i class="fas fa-project-diagram"></i> 代码托管</button>
+            <button class="category-btn"><i class="fas fa-brain"></i> 算法刷题</button>
+            <button class="category-btn"><i class="fas fa-graduation-cap"></i> 在线课程</button>
+            <button class="category-btn"><i class="fas fa-video"></i> 视频教程</button>
+            <button class="category-btn"><i class="fas fa-comments"></i> 技术社区</button>
+            <button class="category-btn"><i class="fas fa-book"></i> 计算机理论</button>
+            <button class="category-btn"><i class="fas fa-tools"></i> 开发工具</button>
+            <button class="category-btn"><i class="fas fa-compass"></i> 资源导航</button>
+        </div>
+        
+        <div class="resources-grid">
+            <!-- 编程学习类资源 -->
+            <div class="resource-card" data-category="编程学习">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="card-title">菜鸟教程</h3>
+                    <span class="card-category">编程学习</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">多语言基础语法教程和在线练习环境，适合编程入门学习，涵盖前端、后端、数据库等。</p>
+                    <a href="https://www.runoob.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>中文资源</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="编程学习">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="card-title">w3school</h3>
+                    <span class="card-category">编程学习</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Web开发全栈教程，包含HTML、CSS、JavaScript等前端技术，提供在线编辑器。</p>
+                    <a href="https://www.w3school.com.cn/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>国际资源</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="编程学习">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-campground"></i>
+                    </div>
+                    <h3 class="card-title">freeCodeCamp</h3>
+                    <span class="card-category">编程学习</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">项目驱动式编程实战平台，通过实践学习前端、数据可视化和后端开发。</p>
+                    <a href="https://www.freecodecamp.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>免费认证</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="编程学习">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="card-title">廖雪峰官方网站</h3>
+                    <span class="card-category">编程学习</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Python、Java、Git通俗易懂的教程，适合初学者系统学习编程语言。</p>
+                    <a href="https://www.liaoxuefeng.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>中文教程</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="编程学习">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="card-title">GeeksforGeeks</h3>
+                    <span class="card-category">编程学习</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">算法与面试题库，提供多种编程语言的实现和计算机科学概念解释。</p>
+                    <a href="https://www.geeksforgeeks.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>算法资源</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <!-- 代码托管类资源 -->
+            <div class="resource-card" data-category="代码托管">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="card-title">GitHub</h3>
+                    <span class="card-category">代码托管</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">全球最大代码仓库和协作平台，托管开源项目，参与协作开发。</p>
+                    <a href="https://github.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>开源平台</div>
+                    <div class="rating"><i class="fas fa-star"></i> 5.0</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="代码托管">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-gitlab"></i>
+                    </div>
+                    <h3 class="card-title">GitLab</h3>
+                    <span class="card-category">代码托管</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">开源项目管理与CI/CD平台，提供完整的DevOps生命周期管理。</p>
+                    <a href="https://about.gitlab.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>CI/CD</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="代码托管">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="card-title">Gitee（码云）</h3>
+                    <span class="card-category">代码托管</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">国内高速代码托管平台，支持Git和SVN，适合国内开发者使用。</p>
+                    <a href="https://gitee.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>国内加速</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+                </div>
+            </div>
+            
+            <!-- 算法刷题类资源 -->
+            <div class="resource-card" data-category="算法刷题">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="card-title">LeetCode</h3>
+                    <span class="card-category">算法刷题</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">大厂笔试高频题库，提升算法能力，备战技术面试的最佳平台。</p>
+                    <a href="https://leetcode.cn/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>面试必备</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="算法刷题">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-head-side-virus"></i>
+                    </div>
+                    <h3 class="card-title">牛客网</h3>
+                    <span class="card-category">算法刷题</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">IT求职真题库和面试经验分享平台，提供笔试题和面经。</p>
+                    <a href="https://www.nowcoder.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>求职准备</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="算法刷题">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Kaggle</h3>
+                    <span class="card-category">算法刷题</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">数据科学竞赛平台和数据集资源库，实践机器学习和数据挖掘。</p>
+                    <a href="https://www.kaggle.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>数据科学</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="算法刷题">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="card-title">杭电OJ</h3>
+                    <span class="card-category">算法刷题</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">ACM入门训练平台，提供丰富的算法题目和在线评测系统。</p>
+                    <a href="http://acm.hdu.edu.cn/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>竞赛训练</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                </div>
+            </div>
+            
+            <!-- 在线课程类资源 -->
+            <div class="resource-card" data-category="在线课程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="card-title">Coursera</h3>
+                    <span class="card-category">在线课程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">斯坦福、谷歌等顶尖机构课程，提供专业证书，系统学习计算机知识。</p>
+                    <a href="https://www.coursera.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>名校课程</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="在线课程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 class="card-title">edX</h3>
+                    <span class="card-category">在线课程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">MIT和哈佛等名校的开源课程平台，提供高质量的计算机课程。</p>
+                    <a href="https://www.edx.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>国际名校</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="在线课程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="card-title">中国大学MOOC</h3>
+                    <span class="card-category">在线课程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">国内985高校的计算机精品课程，系统学习计算机专业知识。</p>
+                    <a href="https://www.icourse163.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>国内名校</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="在线课程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="card-title">MIT OpenCourseWare</h3>
+                    <span class="card-category">在线课程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">麻省理工学院公开课，免费获取世界顶级计算机课程资源。</p>
+                    <a href="https://ocw.mit.edu/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>MIT课程</div>
+                    <div class="rating"><i class="fas fa-star"></i> 5.0</div>
+                </div>
+            </div>
+            
+            <!-- 视频教程类资源 -->
+            <div class="resource-card" data-category="视频教程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-bilibili"></i>
+                    </div>
+                    <h3 class="card-title">Bilibili</h3>
+                    <span class="card-category">视频教程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">免费优质技术UP主内容，如"黑马程序员"等频道提供丰富教程。</p>
+                    <a href="https://www.bilibili.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>中文视频</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="视频教程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="card-title">Udemy</h3>
+                    <span class="card-category">视频教程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">项目实战类付费课程平台，经常有折扣活动，涵盖各种技术栈。</p>
+                    <a href="https://www.udemy.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>实战课程</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="视频教程">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="card-title">慕课网</h3>
+                    <span class="card-category">视频教程</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">中文编程实战课程平台，提供前端、后端、移动开发等视频教程。</p>
+                    <a href="https://www.imooc.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>中文教程</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                </div>
+            </div>
+            
+            <!-- 技术社区类资源 -->
+            <div class="resource-card" data-category="技术社区">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-stack-overflow"></i>
+                    </div>
+                    <h3 class="card-title">Stack Overflow</h3>
+                    <span class="card-category">技术社区</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">全球最大的编程问答社区，解决开发中遇到的各种技术问题。</p>
+                    <a href="https://stackoverflow.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>问答社区</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="技术社区">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="card-title">CSDN</h3>
+                    <span class="card-category">技术社区</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">中文开发者博客和论坛，提供技术文章、教程和问题解答。</p>
+                    <a href="https://www.csdn.net/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>中文社区</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.3</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="技术社区">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-zhihu"></i>
+                    </div>
+                    <h3 class="card-title">知乎编程话题</h3>
+                    <span class="card-category">技术社区</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">编程相关话题讨论区，获取行业经验分享和技术见解。</p>
+                    <a href="https://www.zhihu.com/topic/19559424" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>经验分享</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                </div>
+            </div>
+            
+            <!-- 计算机理论类资源 -->
+            <div class="resource-card" data-category="计算机理论">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="card-title">Visualgo</h3>
+                    <span class="card-category">计算机理论</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">算法动态可视化演示工具，直观理解各种算法的执行过程。</p>
+                    <a href="https://visualgo.net/zh" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>算法可视化</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="计算机理论">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="card-title">OSSU Computer Science</h3>
+                    <span class="card-category">计算机理论</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">自学计算机科学完整路径，组织开源课程形成系统学习计划。</p>
+                    <a href="https://github.com/ossu/computer-science" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>学习路径</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="计算机理论">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="card-title">arXiv</h3>
+                    <span class="card-category">计算机理论</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">论文预印本平台，获取AI和计算机科学领域最新研究成果。</p>
+                    <a href="https://arxiv.org/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>学术论文</div>
+                    <div class="rating"><i class="fas fa-star"></i> 5.0</div>
+                </div>
+            </div>
+            
+            <!-- 开发工具类资源 -->
+            <div class="resource-card" data-category="开发工具">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="card-title">ProcessOn</h3>
+                    <span class="card-category">开发工具</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">在线流程图和UML工具，方便绘制技术架构和系统设计图。</p>
+                    <a href="https://www.processon.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>流程图工具</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="开发工具">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="card-title">Overleaf</h3>
+                    <span class="card-category">开发工具</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">LaTeX在线协作写作平台，适合撰写学术论文和技术文档。</p>
+                    <a href="https://www.overleaf.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>LaTeX编辑</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="开发工具">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="card-title">Tsinghua Mirror</h3>
+                    <span class="card-category">开发工具</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">开源软件镜像站，加速各类开发工具和依赖包的下载速度。</p>
+                    <a href="https://mirrors.tuna.tsinghua.edu.cn/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>国内镜像</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+            
+            <!-- 资源导航类资源 -->
+            <div class="resource-card" data-category="资源导航">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="card-title">HelloGitHub</h3>
+                    <span class="card-category">资源导航</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">开源项目月刊，每月分享有趣、入门级的开源项目。</p>
+                    <a href="https://hellogithub.com/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>开源月刊</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+                </div>
+            </div>
+            
+            <div class="resource-card" data-category="资源导航">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="card-title">Learn Anything</h3>
+                    <span class="card-category">资源导航</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">知识图谱式学习路径，连接各种学习资源形成结构化学习指南。</p>
+                    <a href="https://learn-anything.xyz/" class="visit-btn" target="_blank">访问网站 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card-footer">
+                    <div>学习路径</div>
+                    <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">使用指南</a>
+                <a href="#">资源推荐</a>
+                <a href="#">意见反馈</a>
+                <a href="#">加入我们</a>
+            </div>
+            <p>计算机学习资源导航 &copy; 2023 | 精选30个学计算机必备网站</p>
+            <p>提示：点击卡片中的按钮可直接访问对应网站</p>
+        </footer>
+    </div>
+
+    <script>
+        // 分类按钮交互效果
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const resourceCards = document.querySelectorAll('.resource-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 移除所有按钮的active类
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // 为当前点击的按钮添加active类
+                this.classList.add('active');
+                
+                // 获取按钮文本
+                const filter = this.textContent.trim().replace(/^[^\w]+/, '');
+                
+                // 筛选卡片
+                resourceCards.forEach(card => {
+                    if (filter === '全部资源') {
+                        card.style.display = 'block';
+                    } else {
+                        const category = card.dataset.category;
+                        if (filter === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // 搜索功能
+        const searchInput = document.querySelector('.search-bar input');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            resourceCards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const description = card.querySelector('.card-description').textContent.toLowerCase();
+                const category = card.querySelector('.card-category').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        // 添加卡片悬停效果增强
+        resourceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.zIndex = '1';
+            });
+        });
+    </script>
+</body>
+</html>
